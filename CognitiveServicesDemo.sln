@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "CognitiveServicesDemo", "CognitiveServicesDemo\CognitiveServicesDemo.pyproj", "{9434ED58-58E1-498E-89DC-C428C3F91946}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9434ED58-58E1-498E-89DC-C428C3F91946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9434ED58-58E1-498E-89DC-C428C3F91946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8DF5B906-144A-4B06-B8F7-96143DC1A465}
+	EndGlobalSection
+EndGlobal
