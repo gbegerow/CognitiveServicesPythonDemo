@@ -20,11 +20,11 @@ def main(argv):
     emotion = findEmotion(analysis[0])
     #print(emotion)
     
-    # zeige als Emoji an
+    # finde das passende Emoji
     emoji = EmotionToEmoji(emotion)
 
     # windows console kann leider mit den meisten emoji nicht umgehen 😠
-    print(f"{emotion}: {emoji}")
+    # print(f"{emotion}: {emoji}")
 
     # in eine datei schreiben und im Browser starten, da wird das richtig angezeigt
     with open('emotion.html','w',encoding='utf-8-sig') as f:
@@ -34,7 +34,7 @@ def main(argv):
 
 def recognize(imageUrl):
     # für Testzwecke, Ergebnis des standard images
-    return '[{"faceRectangle":{"height":36,"left":0,"top":59,"width":36},"scores":{"anger":1.20879849E-06,"contempt":9.064575E-07,"disgust":7.811325E-06,"fear":3.73563E-11,"happiness":0.999936461,"neutral":5.35512263E-05,"sadness":7.13684667E-10,"surprise":4.32085123E-08}}]'
+    #return '[{"faceRectangle":{"height":36,"left":0,"top":59,"width":36},"scores":{"anger":1.20879849E-06,"contempt":9.064575E-07,"disgust":7.811325E-06,"fear":3.73563E-11,"happiness":0.999936461,"neutral":5.35512263E-05,"sadness":7.13684667E-10,"surprise":4.32085123E-08}}]'
 
     # Unser subscription key muss sich in der Environmentvariable CS_EMOTION_KEY befinden. (Secrets gehören nicht in den Code)
     # print(os.environ["CS_EMOTION_KEY"])
@@ -49,7 +49,7 @@ def recognize(imageUrl):
     })
 
     try:
-       #
+       # Rufe die REST Schnittstelle der Cognitive Services auf
         conn = http.client.HTTPSConnection('westus.api.cognitive.microsoft.com')
         conn.request("POST", "/emotion/v1.0/recognize?%s" % params, '{"url":"' % imageUrl % '"}', headers)
         response = conn.getresponse()
@@ -73,7 +73,7 @@ def findEmotion(analysis):
 
     return highestEmotion
 
-# 
+# Finde das passende Emoji zur Emotion
 def EmotionToEmoji(emotion):
     # Achtung, je nach eingestelltem Font im Editor sind hier die Emojis selbst zu sehen oder nur platzhalter zeichen
     emojis = {
